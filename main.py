@@ -51,21 +51,23 @@ def main():
         setattr(row,issue_link_property_name,"https://github.com/OnetapInc/locked/issues/"+str(issue_number))
     else:
         row = get_or_create_row(cv,issue_number,issue_title)
-        setattr(row,issue_link_property_name,"https://github.com/OnetapInc/locked/issues/"+str(issue_number))
-        
+
         if action_type == "edited":
             clear_page(row)
             row.children.add_new(BookmarkBlock, title=issue_title, link=issue_link)
             upload_body_with_markdown(row)
+            setattr(row,issue_link_property_name,"https://github.com/OnetapInc/locked/issues/"+str(issue_number))
 
         elif action_type == "closed":
             setattr(row,property_name,state_closed)
+            setattr(row,issue_link_property_name,"https://github.com/OnetapInc/locked/issues/"+str(issue_number))
 
         elif action_type == "deleted":
             pass
         # TODO
         elif action_type == "reopened":
             setattr(row,property_name,state_open)
+            setattr(row,issue_link_property_name,"https://github.com/OnetapInc/locked/issues/"+str(issue_number))
 
         elif action_type == "labeled" or action_type == "unlabeled":
             pass
