@@ -1,9 +1,9 @@
-name : issue-to-notion
+name : issue-convert-to-notion
 description : Make github Issue Event affect Notion Card
-author : Dohyeon Park
+author : zoizoi
 branding:
   icon : activity
   color : yellow
-runs: 
+runs:
   using: 'docker'
   image: 'Dockerfile'
