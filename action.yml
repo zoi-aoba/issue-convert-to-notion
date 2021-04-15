@@ -1,0 +1,9 @@
+name : issue-to-notion
+description : Make github Issue Event affect Notion Card
+author : Dohyeon Park
+branding:
+  icon : activity
+  color : yellow
+runs: 
+  using: 'docker'
+  image: 'Dockerfile'
