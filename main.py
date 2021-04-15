@@ -70,6 +70,7 @@ def main():
             setattr(row,issue_link_property_name,"https://github.com/OnetapInc/locked/issues/"+str(issue_number))
 
         elif action_type == "labeled" or action_type == "unlabeled":
+            setattr(row,issue_link_property_name,"https://github.com/OnetapInc/locked/issues/"+str(issue_number))
             pass
         # TODO
 
