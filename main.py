@@ -46,16 +46,16 @@ def main():
         row = createRow(cv,issue_number,issue_title)
 
         # Add Bookmark for issue
-        row.children.add_new(BookmarkBlock, title=issue_title, link=issue_link)
-        upload_body_with_markdown(row)
+        # row.children.add_new(BookmarkBlock, title=issue_title, link=issue_link)
+        # upload_body_with_markdown(row)
         setattr(row,issue_link_property_name,"https://github.com/OnetapInc/locked/issues/"+str(issue_number))
     else:
         row = get_or_create_row(cv,issue_number,issue_title)
 
         if action_type == "edited":
-            clear_page(row)
-            row.children.add_new(BookmarkBlock, title=issue_title, link=issue_link)
-            upload_body_with_markdown(row)
+            # clear_page(row)
+            # row.children.add_new(BookmarkBlock, title=issue_title, link=issue_link)
+            # upload_body_with_markdown(row)
             setattr(row,issue_link_property_name,"https://github.com/OnetapInc/locked/issues/"+str(issue_number))
 
         elif action_type == "closed":
